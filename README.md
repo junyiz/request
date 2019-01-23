@@ -1,11 +1,15 @@
 # request
-Simplified HTTP request.
+Minimalist HTTP request, Only dependency `iconv-lite`.
 
 ## Install
 
 ```bash
 npm i @junyiz/request
 ```
+
+## Requirements
+
+You will need [iconv-lite](https://github.com/ashtuchkin/iconv-lite)
 
 ## Usage
 
@@ -16,9 +20,7 @@ const request = require('@junyiz/request');
   const repo = await request({
     url: 'https://api.github.com/repos/junyiz/request',
     json: true,
-    headers: {
-      'User-Agent': 'request'
-    }
+    headers: { 'User-Agent': '@junyiz/request' }
   });
   console.log('repos id: ' + repo.id + ' repos name: ' + repo.full_name);
 })();
@@ -71,4 +73,5 @@ Default: 'utf8'
 
 
 ## License
-ISC
+
+Copyright (c) 2018-2019 junyiz. Licensed under the MIT license.

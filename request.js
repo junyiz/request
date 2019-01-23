@@ -26,6 +26,9 @@ module.exports = options => {
     retries = 2,
     encoding = 'utf8'
   } = options;
+  if (!iconv.encodingExists(encoding)) {
+    throw new Error('specified encoding unsupported');
+  }
   if (typeof options == 'string') url = options;
   const isHttps = url.startsWith('https');
   const { hostname, port, path } = parse(url);

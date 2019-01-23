@@ -1,14 +1,21 @@
 {
-  "name": "request",
-  "version": "0.1.0",
+  "name": "@junyiz/request",
+  "version": "1.0.0",
   "description": "Simplified HTTP request",
   "main": "request.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "junyiz",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "iconv-lite": "^0.4.24"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junyiz/request.git"
+  },
+  "files": [
+    "request.js"
+  ]
 }
