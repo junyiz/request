@@ -71,6 +71,10 @@ Default: 2
 Type: string  
 Default: 'utf8'
 
+#### agent
+
+Type: http(s).Agent
+
 
 ## License
 

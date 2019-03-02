@@ -1,7 +1,7 @@
 {
   "name": "@junyiz/request",
-  "version": "1.0.0",
-  "description": "Simplified HTTP request",
+  "version": "1.0.1",
+  "description": "Minimalist HTTP request",
   "main": "request.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

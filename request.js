@@ -13,6 +13,7 @@ const iconv = require('iconv-lite');
  * @param {number} options.timeout - 超时时间，默认 1 分钟
  * @param {number} options.retries - 重试次数，默认重试 2 次；为 0 时，不支持重试
  * @param {string} options.encoding - 解析 response body 的编码，默认 uft8
+ * @param {string} options.agent - 网络代理
  * @return promise
  */
 module.exports = options => {
@@ -24,7 +25,8 @@ module.exports = options => {
     method = 'GET',
     timeout = 60 * 1000,
     retries = 2,
-    encoding = 'utf8'
+    encoding = 'utf8',
+    agent
   } = options;
   if (!iconv.encodingExists(encoding)) {
     throw new Error('specified encoding unsupported');
@@ -42,6 +44,7 @@ module.exports = options => {
     headers,
     port: port || (isHttps ? 443 : 80)
   };
+  if (agent) opts.agent = agent;
   const httpRequest = isHttps ? https.request : http.request;
   return new Promise((resolve, reject) => {
     function wrapper(timeout, retries) {
