@@ -34,6 +34,7 @@ module.exports = options => {
   if (typeof options == 'string') url = options;
   const isHttps = url.startsWith('https');
   const { hostname, port, path } = parse(url);
+  method = method.toUpperCase();
   if (['POST', 'PUT', 'PATCH'].includes(method)) {
     headers['Content-Length'] = Buffer.byteLength(data);
   }
